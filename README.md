@@ -66,3 +66,6 @@ Tools should be obvious. No flags, no syntax, no docs to read.
 ## License
 
 MIT
+
+---
+Built with Builder-Agent
