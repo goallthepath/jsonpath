@@ -15,6 +15,20 @@ jsonpath user.address.city data.json
 
 `jq` is powerful but overkill for 90% of use cases. You just want a value, not a query language.
 
+## Installation
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/goallthepath/jsonpath/main/jsonpath -o /usr/local/bin/jsonpath
+chmod +x /usr/local/bin/jsonpath
+```
+
+Or clone and use directly:
+
+```bash
+git clone https://github.com/goallthepath/jsonpath.git
+./jsonpath/jsonpath user.name data.json
+```
+
 ## Usage
 
 ```bash
@@ -32,6 +46,23 @@ jsonpath user.address data.json
 # → {"city": "Berlin", "zip": "10115"}
 ```
 
+## Examples
+
+```bash
+# Extract API key from config
+curl -s api.example.com/config | jsonpath api.key
+
+# Get first item from array
+cat users.json | jsonpath users.0.name
+
+# Deep nesting
+cat data.json | jsonpath company.departments.0.employees.2.email
+```
+
 ## Philosophy
 
 Tools should be obvious. No flags, no syntax, no docs to read.
+
+## License
+
+MIT
